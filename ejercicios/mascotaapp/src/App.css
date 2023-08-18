@@ -5,6 +5,7 @@
 .App-logo {
   height: 2rem;
   pointer-events: none;
+  /*src: url("logo192.png");*/
 }
 
 @media (prefers-reduced-motion: no-preference) {
