@@ -12,6 +12,18 @@ class RickAndMortyService {
         //Interceptor
         return response.json();
     }
+
+    async getCharactersByUrl(url) {
+        const response = await fetch(url);
+        //Interceptor
+        return response.json();
+    }
+    
+    async getCharactersByPage(page) {
+        const response = await fetch(API_RM.CHARACTERS_BY_PAGE(page));
+        //Interceptor
+        return response.json();
+    }
 }
 
 export default new RickAndMortyService();

@@ -1,0 +1,58 @@
+async getAllCharactersPage() {
+    const allCharacters = [];
+   
+    for (let i = 1; i < 43; i++) {
+      const response = await fetch(API_URL.CHARACTERS_PAGE(i));
+      const data = await response.json();
+      allCharacters.push(...data.results);
+    }
+    return allCharacters;
+}
+
+CHARACTERS_BY_ID: function (id) {
+    return `${this.url}/character/${id}`;
+}
+
+CHARACTERS_PAGE: function (id) {
+    return `${this.url}/character?page=${id}`;
+}
+
+
+
+
+
+
+export const Cards = () => {
+  const [personajes, setPersonajes] = useState([]);
+  const [count, setCount] = useState(0);
+
+  const NextPage = async () => {
+    const nextPage = count + 1;
+    const data = await RickServices.getCharactersPage(nextPage);
+    setPersonajes(data.results);
+    setCount(nextPage);
+  };
+  
+  useEffect(() => {
+    NextPage();
+  }, [])
+  
+  const cardList = personajes.map((personaje) => (
+    <Card personaje={personaje} key={personaje.id} />
+  ));
+  
+  return (
+    <>
+      <div className="album py-5 bg-light">
+        <div className="container">
+          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          {cardList}
+          </div>
+        </div>
+      </div>
+      <div className="d-flex justify-content-center">
+        <button className="btn btn-primary" onClick={NextPage}>Siguiente</button>
+      </div>
+    </>
+  );
+};
