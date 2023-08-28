@@ -35,6 +35,7 @@ export const Cards = () => {
     page = 1;
   }
 
+  //Buttons creation
   let limit = parseInt(page)+3;
 
   if (limit > maxPages) {
@@ -75,10 +76,8 @@ export const Cards = () => {
     buttons.push(<Link to={"/"+maxPages} className="btn btn-secondary" key={maxPages} style={{margin: 0.15 + 'rem'}}>{maxPages}</Link>);
   }
 
-  
-  
+  //Creación de cartas
   cardsList = mascotas.map((m) => <Card mascota={m} key={m.id} />);
-  console.log(cardsList);
 
   return (
     <div>

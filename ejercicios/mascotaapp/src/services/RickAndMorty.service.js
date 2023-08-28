@@ -24,6 +24,17 @@ class RickAndMortyService {
         //Interceptor
         return response.json();
     }
+
+    async getAllCharactersPages(maxPages) {
+        const allCharacters = [];
+       
+        for (let i = 1; i < maxPages+1; i++) {
+          const response = await fetch(API_RM.CHARACTERS_BY_PAGE(i));
+          const data = await response.json();
+          allCharacters.push(...data.results);
+        }
+        return allCharacters;
+    }
 }
 
 export default new RickAndMortyService();

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export const Card = ({mascota}) => {
    
   return (
-    <div>
+    <div className='card-RM'>
         <div className="col">
             <div className="card shadow-sm">
               <Link to={"details/"+mascota.id}>
@@ -17,7 +17,17 @@ export const Card = ({mascota}) => {
                     <div className="btn-group">
                       <Link to={"details/"+mascota.id} className='btn btn-sm btn-outline-secondary'>View</Link>
                     </div>
-                    <small className="text-body-secondary">9 mins</small>
+                    <small className="text-body-secondary">Estado: 
+                      {(() => {
+                        if (mascota.status=="Alive") {
+                          return <span style={{color: "green"}}> Vivo</span>;
+                        } else if (mascota.status=="Dead") {
+                          return <span style={{color: "red"}}> Muerto</span>;
+                        } else {
+                          return <span style={{color: "grey"}}> Desconocido</span>;
+                        }
+                      })()}
+                    </small>
                 </div>
                 </div>
             </div>

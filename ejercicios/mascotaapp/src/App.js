@@ -7,6 +7,8 @@ import { Main } from './components/public/Main';
 import { Detail } from './components/public/Detail';
 import { UserForm } from './components/public/UserForm';
 import { Login } from './components/public/Login';
+import { AllCharactersCards } from './components/public/AllCharactersCards';
+import { AllCharactersOnScroll } from './components/public/AllCharactersOnScroll';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path={'/:page/details/:id'} Component={Detail} />
           <Route path={'/user-form'} Component={UserForm} />
           <Route path={'/login'} Component={ Login } />
+          <Route path={'/allcharacters'} Component={ AllCharactersCards } />
+          <Route path={'/allcharactersonscroll'} Component={ AllCharactersOnScroll } />
         </Routes>
       <Footer />
     </div>
