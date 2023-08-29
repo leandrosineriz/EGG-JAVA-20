@@ -7,86 +7,63 @@ import { useParams, Link, redirect } from 'react-router-dom';
 export const AllCharactersOnScroll = () => {
   
   const [mascotas, setMascotas] = useState([]);
-  const [maxPages, setMaxPages] = useState(42);
-  let {page} = useParams();
 
+  let page = 1;
   let cardsList=[];
-  let buttons = [];
+  let cardContainer;
+  let lastCardObserver;
 
-  
-  useEffect(() => {
+  function loadNewCards(page) {
+    page +=1;
     RickAndMortyService.getCharactersByPage(page)
     .then((data) => {
-      setMaxPages(data.info.pages);
+        data.results.map((m) => cardsList.push(<Card mascota={m} key={m.id} />));
+        setMascotas[data.results];
+        console.log(data.results);
+    })
+    .catch((error) => console.log(error));
+  }
+
+  useEffect(() => {
+    console.log("1")
+    RickAndMortyService.getCharactersByPage(1)
+    .then((data) => {
       setMascotas(data.results);
+      
     })
     .catch((error) => console.log(error));
 
-    buttons = [];
-
     return () => {
-      buttons = [];
-      console.log("clear!");
+      console.log("clear 1!");
     };
-  }, [page]);
-  
-  
-  if (page == undefined) {
-    page = 1;
-  }
+  }, []);
 
   
-
-  //Intersection Observer test
-  //####################################################
-//   const observer = new IntersectionObserver( entries => {
-//     entries.forEach(entry => {
-//       console.log("entre");
-//       entry.target.classList.toggle("show", entry.isIntersecting);
-      
-//     });
-//   });
-
-//   cards.forEach(card => {
-//     console.log(card);
-//     observer.observe(card);
-//   })
 
   useEffect(() => {
-    const lastCardObserver = new IntersectionObserver( entries => {
-        const lastCard = entries[0];
-        if (!lastCard.isIntersecting) return;
-            loadNewCards();
-            lastCardObserver.unobserve(lastCard.target);
-            lastCardObserver.observe(document.querySelector(".card-RM:last-child"));
+    console.log("2");
+    lastCardObserver = new IntersectionObserver( entries => {
+      const lastCard = entries[0];
+      if (!lastCard.isIntersecting) return;
+          loadNewCards(page);
+          lastCardObserver.unobserve(lastCard.target);
+          lastCardObserver.observe(document.querySelector(".card-RM:last-child"));
+          console.log(document.querySelector(".card-RM:last-child"));
     });
 
-    let cardContainer;
-
-    try {
+      try {
         lastCardObserver.observe(document.querySelector(".card-RM:last-child"));
         cardContainer = document.querySelector(".test");
-    } catch (error) {
-        console.log(error);
-    }
-    
-
-    function loadNewCards() {
-        RickAndMortyService.getCharactersByPage(page+1)
-        .then((data) => {
-            data.results.map((m) => cardsList.push(<Card mascota={m} key={m.id} />));
-            console.log(data.results);
-        })
-        .catch((error) => console.log(error));
-    }
-  
+      } catch (error) {
+        console.log("error observer");
+      }
     return () => {
-      cardsList = [];
+      
     }
-  }, [cardsList]);
+  }, [mascotas])
 
   cardsList = mascotas.map((m) => <Card mascota={m} key={m.id} />);
-
+  
   return (
     <div>
       <div className="album py-5 bg-body-tertiary">
@@ -106,3 +83,15 @@ export const AllCharactersOnScroll = () => {
     </div>
   );
 }
+
+
+function subscribeRmPage(params) {
+  let characters = [];
+  RickAndMortyService.getCharactersByPage(1)
+    .then((data) => {
+      characters = data.results;
+      return characters;
+    })
+    .catch((error) => console.log(error))
+}
+
