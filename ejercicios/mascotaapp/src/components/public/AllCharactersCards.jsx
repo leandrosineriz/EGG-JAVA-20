@@ -8,11 +8,9 @@ export const AllCharactersCards = () => {
     let cardsList=[];
 
     useEffect(() => {
-        //console.log("USE EFFECT");
         RickAndMortyService.getAllCharactersPages(42)
         .then((list) => {
             setCharacters(list);
-            //console.log("THEN");
         })
         .catch((error) => console.log(error));
 
@@ -22,8 +20,7 @@ export const AllCharactersCards = () => {
     }, []);
     
     cardsList = characters.map((m) => <Card mascota={m} key={m.id} />);
-    //console.log(characters);
-    //console.log("MAIN");
+    
     return (
         <div>
             <div className="album py-5 bg-body-tertiary">
