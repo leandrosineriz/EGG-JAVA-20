@@ -1,11 +1,12 @@
-import React from 'react'
+import logo from "../../img/logo192.png"
+import React from 'react' 
 
 export const Login = () => {
   return (
     <div className="position-relative" style={{padding: 5+"vw "+0+" "+5+"vw "+25+'vw'}}>
       <div className="col-md-7 col-lg-8">
             <form>
-                <img className="mb-4" src="logo192.png" alt="asd" width="50" height="50" />
+                <img className="mb-4" src={logo} alt="asd" width="50" height="50" />
                 <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
 
                 <div className="form-floating">

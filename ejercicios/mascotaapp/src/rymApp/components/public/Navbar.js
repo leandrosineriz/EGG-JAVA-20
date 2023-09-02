@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import logo from "../../img/logo192.png"
 
 export const Navbar = () => {
   return (
@@ -13,20 +14,20 @@ export const Navbar = () => {
                 >
                     <img
                     className='App-logo'
-                    src='logo192.png'
+                    src={logo}
                     alt='logo'
                     >
                     </img>
                 </span>
 
                 <ul className="nav col-12 col-lg-auto me-lg-3 mb-2 justify-content-center mb-md-0">
-                <li><Link to={"/"} className='nav-link px-2 text-secondary'>Home</Link></li>
+                <li><Link to={"/rym"} className='nav-link px-2 text-secondary'>Home</Link></li>
                 </ul>
                 <ul className="nav col-12 col-lg-auto me-lg-3 mb-2 justify-content-center mb-md-0">
-                <li><Link to={"/allcharacters"} className='nav-link px-2 text-secondary'>All Characters</Link></li>
+                <li><Link to={"/rym/allcharacters"} className='nav-link px-2 text-secondary'>All Characters</Link></li>
                 </ul>
                 <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><Link to={"/allcharactersonscroll"} className='nav-link px-2 text-secondary'>Characters OnScroll</Link></li>
+                <li><Link to={"/rym/allcharactersonscroll"} className='nav-link px-2 text-secondary'>Characters OnScroll</Link></li>
                 </ul>
 
                 <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -34,8 +35,8 @@ export const Navbar = () => {
                 </form>
 
                 <div className="text-end">
-                <Link to={"/login"}><button type="button" className="btn btn-outline-light me-2">Login</button></Link>
-                <Link to={"/user-form"}><button type="button" className="btn btn-warning">Sign-up</button></Link>
+                <Link to={"/rym/login"}><button type="button" className="btn btn-outline-light me-2">Login</button></Link>
+                <Link to={"/rym/user-form"}><button type="button" className="btn btn-warning">Sign-up</button></Link>
                 </div>
             </div>
             </div>

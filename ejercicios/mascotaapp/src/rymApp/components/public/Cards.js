@@ -52,12 +52,12 @@ export const Cards = () => {
       }
       if (i == parseInt(page)) {
         flagInicio = false;
-        buttons.push(<Link to={"/"+i} className="btn btn-primary" key={i} style={{margin: 0.15 + 'rem'}}>{i}</Link>);
+        buttons.push(<Link to={"/rym/"+i} className="btn btn-primary" key={i} style={{margin: 0.15 + 'rem'}}>{i}</Link>);
         continue;
       }
 
       if (i > 1 && flagInicio) {
-        buttons.push(<Link to={"/1"} className="btn btn-secondary" key={1} style={{margin: 0.15 + 'rem'}}>{1}</Link>);
+        buttons.push(<Link to={"/rym/1"} className="btn btn-secondary" key={1} style={{margin: 0.15 + 'rem'}}>{1}</Link>);
         if (i > 2) {
           buttons.push(<button className="btn btn-secondary" key="separador1" style={{margin: 0.15 + 'rem'}}>...</button>);
         }
@@ -65,7 +65,7 @@ export const Cards = () => {
       }
 
       flagInicio = false;
-      buttons.push(<Link to={"/"+i} className="btn btn-secondary" key={i} style={{margin: 0.15 + 'rem'}}>{i}</Link>);
+      buttons.push(<Link to={"/rym/"+i} className="btn btn-secondary" key={i} style={{margin: 0.15 + 'rem'}}>{i}</Link>);
     }
   }
 
@@ -73,7 +73,7 @@ export const Cards = () => {
     if (maxPages - i >= 1) {
       buttons.push(<button className="btn btn-secondary" key="separador2" style={{margin: 0.15 + 'rem'}}>...</button>);
     }
-    buttons.push(<Link to={"/"+maxPages} className="btn btn-secondary" key={maxPages} style={{margin: 0.15 + 'rem'}}>{maxPages}</Link>);
+    buttons.push(<Link to={"/rym/"+maxPages} className="btn btn-secondary" key={maxPages} style={{margin: 0.15 + 'rem'}}>{maxPages}</Link>);
   }
 
   //Creación de cartas

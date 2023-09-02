@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Cards } from './Cards';
-import RickAndMortyService from '../../services/RickAndMorty.service';
 import { useParams } from 'react-router-dom';
 
 export const Main = () => {

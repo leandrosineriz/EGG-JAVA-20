@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import logo from "../../img/logo192.png"
 
 export const Footer = () => {
 
@@ -23,7 +24,7 @@ export const Footer = () => {
                 >
                     <img
                     className='App-logo'
-                    src='logo192.png'
+                    src={logo}
                     alt='logo'
                     >
                     </img>

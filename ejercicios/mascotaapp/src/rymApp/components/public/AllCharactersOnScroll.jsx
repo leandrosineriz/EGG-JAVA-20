@@ -54,7 +54,6 @@ export const AllCharactersOnScroll = () => {
                 <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                   {cardsList}
                 </div>
-                
               </div>
             ) : (
               <div>
@@ -62,8 +61,13 @@ export const AllCharactersOnScroll = () => {
               </div>
             )
           }
-        </div>
-        <div className="moreCards" hidden={mascotas.length!=0 ? false : true}>
+          <div className="moreCards" hidden={mascotas.length!=0 ? false : true}>
+            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+              <Card mascota={null} key={"t1"}/>
+              <Card mascota={null} key={"t2"}/>
+              <Card mascota={null} key={"t3"}/>
+            </div>
+          </div>
         </div>
       </div>
     </div>
