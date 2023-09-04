@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import logo from "../../img/logo192.png"
+import { SearchRymChar } from './SearchRymChar';
 
 export const Navbar = () => {
   return (
@@ -30,9 +31,7 @@ export const Navbar = () => {
                 <li><Link to={"/rym/allcharactersonscroll"} className='nav-link px-2 text-secondary'>Characters OnScroll</Link></li>
                 </ul>
 
-                <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                <input type="search" className="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search" />
-                </form>
+                <SearchRymChar />
 
                 <div className="text-end">
                 <Link to={"/rym/login"}><button type="button" className="btn btn-outline-light me-2">Login</button></Link>

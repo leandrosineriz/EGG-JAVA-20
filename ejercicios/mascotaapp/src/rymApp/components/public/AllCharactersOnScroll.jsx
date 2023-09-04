@@ -12,7 +12,7 @@ export const AllCharactersOnScroll = () => {
   let cardsList=[];
   let lastCardObserver;
   let moreCards;
-
+  
   useEffect(() => {
     moreCards = document.querySelector(".moreCards");
     const controller = new AbortController();
