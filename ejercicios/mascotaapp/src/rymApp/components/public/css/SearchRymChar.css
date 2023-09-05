@@ -1,0 +1,30 @@
+
+.searchDrop {
+    overflow-x: scroll;
+    overflow-x: hidden;
+    position: absolute;
+    background-color: rgb(39, 39, 39);
+    width: fit-content;
+    margin-top: 0.2rem;
+    height: 20rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.searchDrop::-webkit-scrollbar {
+    width: 0.25rem; /* Ancho de la barra lateral horizontal */
+    height: 0.5rem; /* Altura de la barra lateral vertical */
+}
+
+.searchDrop::-webkit-scrollbar-thumb {
+    background-color: #313131; /* Color del pulgar (barra) */
+    border-radius: 6px; /* Radio de borde del pulgar */
+}
+
+.searchDrop::-webkit-scrollbar-track {
+    background-color: #f0f0f0; /* Color del fondo de la barra lateral */
+}
+
+.hidden {
+    opacity: 0%;
+}

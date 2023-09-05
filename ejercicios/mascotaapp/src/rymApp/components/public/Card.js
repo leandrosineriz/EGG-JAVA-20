@@ -35,20 +35,20 @@ export const Card = ({mascota}) => {
         </div>
       ) : 
       (
-        <div className="col">
-          <div className="card shadow-sm">
-            
-              <img width="100%" src="" alt='img'/>
-            
-
-              <h3 className="mb-0 text-dark text-center"> </h3>
-              <div className="card-body">
-              <div className="d-flex justify-content-between align-items-center">
-                  <div className="btn-group">
-                    <button className='btn btn-sm btn-outline-secondary'></button>
-                  </div>
-              </div>
-              </div>
+        <div className="card" aria-hidden="true">
+          <img src="..." class="card-img-top" alt="..." />
+          <div className="card-body">
+            <h5 className="card-title placeholder-glow">
+              <span className="placeholder col-6"></span>
+            </h5>
+            <p className="card-text placeholder-glow">
+              <span className="placeholder col-7"></span>
+              <span className="placeholder col-4"></span>
+              <span className="placeholder col-4"></span>
+              <span className="placeholder col-6"></span>
+              <span className="placeholder col-8"></span>
+            </p>
+            <a className="btn btn-primary disabled placeholder col-6" aria-disabled="true"></a>
           </div>
         </div>
       )
