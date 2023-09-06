@@ -11,7 +11,7 @@ export const Navbar = () => {
             <div className="container">
             <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
-                <span
+                <Link
                 to={"/"}
                 >
                     <img
@@ -20,10 +20,13 @@ export const Navbar = () => {
                     alt='logo'
                     >
                     </img>
-                </span>
+                </Link>
 
                 <ul className="nav col-12 col-lg-auto me-lg-3 mb-2 justify-content-center mb-md-0">
-                <li><Link to={"/rym"} className='nav-link px-2 text-secondary'>Home</Link></li>
+                <li><Link to={"/"} className='nav-link px-2 text-secondary'>Home</Link></li>
+                </ul>
+                <ul className="nav col-12 col-lg-auto me-lg-3 mb-2 justify-content-center mb-md-0">
+                <li><Link to={"/rym"} className='nav-link px-2 text-secondary'>Pages</Link></li>
                 </ul>
                 <ul className="nav col-12 col-lg-auto me-lg-3 mb-2 justify-content-center mb-md-0">
                 <li><Link to={"/rym/allcharacters"} className='nav-link px-2 text-secondary'>All Characters</Link></li>
