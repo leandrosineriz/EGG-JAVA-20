@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import "./css/Card.css"
 
 export const Card = ({mascota}) => {
   
   return (
-    <div className='card-RM'>
+    <div className='card-RM position'>
       { mascota ? (
         <div className="col">
           <div className="card shadow-sm">

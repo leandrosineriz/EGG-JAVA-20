@@ -2,6 +2,7 @@ import React from 'react'
 import RickAndMortyService from '../../services/RickAndMorty.service';
 import { useState, useEffect } from 'react';
 import { Card } from './Card';
+import "./css/Main.css"
 
 export const AllCharactersCards = () => {
     const [characters, setCharacters] = useState([]);
@@ -22,7 +23,7 @@ export const AllCharactersCards = () => {
     cardsList = characters.map((m) => <Card mascota={m} key={m.id} />);
     
     return (
-        <div>
+        <div className='main'>
             <div className="album py-5 bg-body-tertiary">
                 <div className="container">
                     { characters.length>0 ? (

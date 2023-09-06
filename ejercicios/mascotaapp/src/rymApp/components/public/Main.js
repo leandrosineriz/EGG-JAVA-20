@@ -1,13 +1,14 @@
 import React from 'react'
 import { Cards } from './Cards';
 import { useParams } from 'react-router-dom';
+import "./css/Main.css"
 
 export const Main = () => {
     const mascotas = [];
     let {page} = useParams();
 
     return (
-        <main>
+        <main className="main">
             <section className="py-5 text-center container">
                     <div className="row py-lg-5">
                         <div className="col-lg-6 col-md-8 mx-auto">

@@ -21,7 +21,7 @@ export const Detail = () => {
       setMascota(data);
     })
     .catch((err) => console.log(err));
-  }, [])
+  }, [id])
 
   // const results = [];
   

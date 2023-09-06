@@ -2,10 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import logo from "../../img/logo192.png"
 import { SearchRymChar } from './SearchRymChar';
+import "./css/Navbar.css"
 
 export const Navbar = () => {
   return (
-    <div>
+    <div className="topbar">
         <header className="p-3 text-bg-dark">
             <div className="container">
             <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
